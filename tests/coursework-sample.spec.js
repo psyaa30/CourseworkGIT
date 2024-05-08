@@ -4,7 +4,7 @@ import exp from 'constants';
 const { test, expect} = require('@playwright/test');
 
 // change this to the URL of your website, could be local or GitHub pages
-const websiteURL = 'file:///Users/abd-al-raoufal-kilany/Desktop/Henley/people_search.html/';
+const websiteURL = 'https://psyaa30.github.io/CourseworkGIT/';
 
 // Go to the website home page before each test.
 test.beforeEach(async ({ page }) => {
