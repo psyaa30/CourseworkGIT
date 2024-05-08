@@ -1,0 +1,72 @@
+/* Basic styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header, footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f1f1f1;
+}
+
+ul#navigation {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    color: white;
+}
+
+ul#navigation li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 4fr; /* Main content is four times the size of the sidebar */
+    gap: 10px;
+}
+
+aside {
+    grid-column: 1;
+}
+
+#results {
+    grid-column: 2;
+    border: dashed 1px black;
+    padding: 10px;
+    min-height: 150px;
+}
+
+footer {
+    grid-column: 1 / -1; /* Stretch across all columns */
+    text-align: center;
+}
+
+/* Responsive styles */
+@media (max-width: 500px) {
+    ul#navigation {
+        flex-direction: column;
+    }
+
+    main {
+        grid-template-columns: 1fr; /* Stack sidebar and main content */
+    }
+
+    aside {
+        order: 2; /* Move sidebar under the main content */
+    }
+
+    footer {
+        order: 3;
+        grid-column: 1;
+        width: 100%; /* Ensure footer stretches across the width */
+    }
+}

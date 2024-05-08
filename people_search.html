@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>People Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <ul id="navigation">
+            <li><a href="people_search.html">People Search</a></li>
+            <li><a href="vehicle_search.html">Vehicle Search</a></li>
+            <li><a href="add_vehicle.html">Add a Vehicle</a></li>
+        </ul>
+    </header>
+    <main id="container">
+        <h1>People Search</h1>
+        <form id="searchForm">
+            <label for="name">Name or License Number:</label>
+            <input type="text" id="name" name="name" placeholder="Enter name or license number" required>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="results"></div>
+        <div id="message"></div>
+    </main>
+    <footer>
+        <p>© 2024 Coursework Example</p>
+    </footer>
+    <script src="app.js" type="module"> 
+    import { searchPeople, searchVehicles, addVehicle, displayResults } from "./app.js";
+    window.searchPeople = searchPeople;
+    window.searchVehicles = searchVehicles;
+    window.addVehicle = addVehicle;
+    window.displayResults = displayResults;
+
+    </script>
+</body>
+</html>

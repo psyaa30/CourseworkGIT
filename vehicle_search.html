@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vehicle Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <ul id="navigation">
+            <li><a href="people_search.html">People Search</a></li>
+            <li><a href="vehicle_search.html">Vehicle Search</a></li>
+            <li><a href="add_vehicle.html">Add a Vehicle</a></li>
+        </ul>
+    </header>
+    <main id="container">
+        <h1>Vehicle Search</h1>
+        <form id="vehicleSearchForm">
+            <label for="rego">Vehicle Registration Number:</label>
+            <input type="text" id="rego" name="rego" placeholder="Enter registration number" required>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="results"></div>
+        <div id="message"></div>
+    </main>
+    <footer>
+        <p>© 2024 Coursework Example</p>
+    </footer>
+    <script src="app.js" type="module"></script>
+</body>
+</html>
