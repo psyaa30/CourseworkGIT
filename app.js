@@ -1,6 +1,6 @@
 // Import the createClient function from the Supabase JS library
 //import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
-import { createClient } from "../node-modules/@supabase/supabase-js";
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
 
 // Configuration for Supabase API
 const SUPABASE_URL = 'https://mfhrllsznlxvbhnxcvll.supabase.co';
