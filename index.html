@@ -16,15 +16,15 @@
     <main>
         <h1>People Search</h1>
         <form id="searchForm">
-            <input type="text" id="name" placeholder="Enter name or license number">
+            <input type="text" id="name" placeholder="Enter name or license number" required>
             <button type="submit">Submit</button>
         </form>
         <div id="results"></div>
+        <div id="message"></div>
     </main>
     <footer>
         <p>© 2024 Coursework Example</p>
     </footer>
-    <!-- Update script tag to type="module" and remove inline event listeners -->
     <script type="module" src="app.js"></script>
     <script type="module">
         import { searchPeople } from './app.js';

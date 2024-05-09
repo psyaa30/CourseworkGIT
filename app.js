@@ -2,8 +2,8 @@
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
 
 // Configuration for Supabase API
-const SUPABASE_URL = 'https://your-supabase-project-url.supabase.co';
-const SUPABASE_KEY = 'your-supabase-anon-key';
+const SUPABASE_URL = 'https://mfhrllsznlxvbhnxcvll.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1maHJsbHN6bmx4dmJobnhjdmxsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxMjYyOTQsImV4cCI6MjAzMDcwMjI5NH0.UbF_JOJIntL7oYhbkzr_k1P_1E_B0ulwtBEdEOquyS4';
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 // Function to handle people search
@@ -15,18 +15,22 @@ export async function searchPeople(event) {
         return;
     }
 
-    const { data, error } = await supabase
-        .from('people')
-        .select('*')
-        .or(`name.ilike.%${nameOrLicense}%,license_number.ilike.%${nameOrLicense}%`);
+    try {
+        const { data, error } = await supabase
+            .from('people')
+            .select('*')
+            // Make sure the field names match your database schema
+            .or(`name.ilike.%${nameOrLicense}%,license_number.ilike.%${nameOrLicense}%`);
 
-    if (error) {
+        if (error) throw error;
+        
+        displayResults(data, 'people');
+    } catch (error) {
         document.getElementById('message').innerText = 'Failed to fetch data.';
         console.error('Error:', error);
-    } else {
-        displayResults(data, 'people');
     }
 }
+
 
 // Function to handle vehicle search
 export async function searchVehicle(event) {
