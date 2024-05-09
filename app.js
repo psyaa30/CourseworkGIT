@@ -19,7 +19,7 @@ export async function searchPeople(event) {
     }
 
     try {
-        let { data: people, error } = await supabase
+        const { data: people, error } = await supabase
             .from('people')
             .select('*')
            // .eq('name',"rachel")
