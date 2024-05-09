@@ -10,6 +10,8 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 export async function searchPeople(event) {
     event.preventDefault();
     const nameOrLicense = document.getElementById('name').value.trim();
+    console.log("Searching for:", nameOrLicense);  // Debug input
+
     if (!nameOrLicense) {
         document.getElementById('message').innerText = 'Please enter a name or license number.';
         return;
@@ -19,17 +21,20 @@ export async function searchPeople(event) {
         const { data, error } = await supabase
             .from('people')
             .select('*')
-            // Make sure the field names match your database schema
             .or(`name.ilike.%${nameOrLicense}%,license_number.ilike.%${nameOrLicense}%`);
 
+        console.log("Received data:", data); // Debug output
+        console.log("API Error:", error);  // Debug errors
+
         if (error) throw error;
-        
+
         displayResults(data, 'people');
     } catch (error) {
         document.getElementById('message').innerText = 'Failed to fetch data.';
         console.error('Error:', error);
     }
 }
+
 
 
 // Function to handle vehicle search
