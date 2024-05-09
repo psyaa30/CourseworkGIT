@@ -20,9 +20,8 @@ export async function searchPeople(event) {
     try {
         const { data, error } = await supabase
             .from('people')
-            .select('*')
-            //.eq('name',nameOrLicense)
-
+            .select('personid')
+            .eq('name',"rachel")
 
             // .select('*')
             // .or(`name.ilike.%${nameOrLicense}%,license_number.ilike.%${nameOrLicense}%`);
