@@ -19,7 +19,7 @@ export async function searchPeople(event) {
     }
 
     try {
-        const { data: people, error } = await supabase
+        let { data: people, error } = await supabase
             .from('people')
             .select('*')
            // .eq('name',"rachel")
@@ -27,7 +27,7 @@ export async function searchPeople(event) {
             // .select('*')
             // .or(`name.ilike.%${nameOrLicense}%,license_number.ilike.%${nameOrLicense}%`);
 
-        console.log("Received data:", data.map(r=>r.name)); // Debug output
+        console.log("Received data:", data.map(r=>r)); // Debug output
         console.log("API Error:", error);  // Debug errors
 
         if (error) throw error;
