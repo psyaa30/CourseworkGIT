@@ -4,7 +4,6 @@
   "main": "app.js",
   "scripts": {},
   "author": "",
-  "type": "module",
   "license": "ISC",
   "description": "",
   "devDependencies": {
