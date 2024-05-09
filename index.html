@@ -13,26 +13,22 @@
             <li><a href="add_vehicle.html">Add a Vehicle</a></li>
         </ul>
     </header>
-    <main id="container">
+    <main>
         <h1>People Search</h1>
         <form id="searchForm">
-            <label for="name">Name or License Number:</label>
-            <input type="text" id="name" name="name" placeholder="Enter name or license number" required>
+            <input type="text" id="name" placeholder="Enter name or license number">
             <button type="submit">Submit</button>
         </form>
         <div id="results"></div>
-        <div id="message"></div>
     </main>
     <footer>
         <p>© 2024 Coursework Example</p>
     </footer>
-    <script src="app.js" type="module"> 
-    import { searchPeople, searchVehicles, addVehicle, displayResults } from "./app.js";
-    window.searchPeople = searchPeople;
-    window.searchVehicles = searchVehicles;
-    window.addVehicle = addVehicle;
-    window.displayResults = displayResults;
-
+    <!-- Update script tag to type="module" and remove inline event listeners -->
+    <script type="module" src="app.js"></script>
+    <script type="module">
+        import { searchPeople } from './app.js';
+        document.getElementById('searchForm').addEventListener('submit', searchPeople);
     </script>
 </body>
 </html>

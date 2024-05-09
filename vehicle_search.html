@@ -13,19 +13,21 @@
             <li><a href="add_vehicle.html">Add a Vehicle</a></li>
         </ul>
     </header>
-    <main id="container">
+    <main>
         <h1>Vehicle Search</h1>
         <form id="vehicleSearchForm">
-            <label for="rego">Vehicle Registration Number:</label>
-            <input type="text" id="rego" name="rego" placeholder="Enter registration number" required>
+            <input type="text" id="rego" placeholder="Enter registration number">
             <button type="submit">Submit</button>
         </form>
         <div id="results"></div>
-        <div id="message"></div>
     </main>
     <footer>
         <p>© 2024 Coursework Example</p>
     </footer>
-    <script src="app.js" type="module"></script>
+    <script type="module" src="app.js"></script>
+    <script type="module">
+        import { searchVehicle } from './app.js';
+        document.getElementById('vehicleSearchForm').addEventListener('submit', searchVehicle);
+    </script>
 </body>
 </html>
