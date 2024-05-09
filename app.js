@@ -27,7 +27,7 @@ export async function searchPeople(event) {
             // .select('*')
             // .or(`name.ilike.%${nameOrLicense}%,license_number.ilike.%${nameOrLicense}%`);
 
-        console.log("Received data:", data.map(r=>r)); // Debug output
+        console.log("Received data:", people.map(r=>r)); // Debug output
         console.log("API Error:", error);  // Debug errors
 
         if (error) throw error;
