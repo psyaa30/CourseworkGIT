@@ -12,6 +12,6 @@
     "@types/node": "^20.12.11"
   },
   "dependencies": {
-    "supabase": "^1.165.0"
+    "@supabase/supabase-js": "^2.43.1"
   }
 }
