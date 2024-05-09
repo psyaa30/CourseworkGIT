@@ -21,11 +21,7 @@ export async function searchPeople(event) {
         const { data, error } = await supabase
             .from('people')
             .select('dob')
-            .eq('name',nameOrLicense)
-
-
-            .select('*')
-            .or(`name.ilike.%${nameOrLicense}%,license_number.ilike.%${nameOrLicense}%`);
+            .eq('name',nameOrLicense);
 
         console.log("Received data:", data); // Debug output
         console.log("API Error:", error);  // Debug errors
