@@ -21,7 +21,7 @@ export async function searchPeople(event) {
         const { data, error } = await supabase
             .from('people')
             .select('*')
-            .eq('name',nameOrLicense)
+            //.eq('name',nameOrLicense)
 
 
             // .select('*')
