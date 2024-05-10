@@ -31,7 +31,7 @@ export async function searchPeople(event) {
         console.log("API Error:", error);  // Debug errors
 
         if (error) throw error;
-
+//
         displayResults(people, 'people');
     } catch (error) {
         document.getElementById('message').innerText = 'Failed to fetch data.';
