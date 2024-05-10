@@ -130,7 +130,7 @@ document.getElementById('submitBtn').addEventListener('click', async () =>
 
     let query = supabase.from('people').select('*');
     if (searchName !== '') 
-    {
+    {//
         query = query.or(`name.ilike.*${searchName}*`); 
     }
     if (searchLicense !== '') 
