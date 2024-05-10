@@ -22,22 +22,24 @@ export async function searchPeople(event) {
         const { data: people, error } = await supabase
             .from('people')
             .select('*')
-           // .eq('name',"rachel")
+            .or(`name.ilike.%25${nameOrLicense}%25,license_number.ilike.%25${nameOrLicense}%25`);
 
-            // .select('*')
-            // .or(`name.ilike.%${nameOrLicense}%,license_number.ilike.%${nameOrLicense}%`);
-
-        console.log("Received data:", people.map(r=>r)); // Debug output
+        console.log("Received data:", people); // Debug output
         console.log("API Error:", error);  // Debug errors
 
         if (error) throw error;
-//
+        if (people.length === 0) {
+            document.getElementById('message').innerText = 'No results found.';
+            return;
+        }
+
         displayResults(people, 'people');
     } catch (error) {
         document.getElementById('message').innerText = 'Failed to fetch data.';
         console.error('Error:', error);
     }
 }
+
 
 
 
