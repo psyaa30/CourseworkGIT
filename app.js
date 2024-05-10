@@ -19,10 +19,13 @@ export async function searchPeople(event) {
     }
 
     try {
+        const queryString = `name.ilike.%25${nameOrLicense}%25,license_number.ilike.%25${nameOrLicense}%25`;
+        console.log("Query String:", queryString);
+
         const { data: people, error } = await supabase
             .from('people')
             .select('*')
-           // .or(`name.ilike.%25${nameOrLicense}%25,license_number.ilike.%25${nameOrLicense}%25`);
+            .or(queryString);
 
         console.log("Received data:", people); // Debug output
         console.log("API Error:", error);  // Debug errors
