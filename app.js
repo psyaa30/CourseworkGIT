@@ -128,14 +128,14 @@ document.getElementById('submitBtn').addEventListener('click', async () =>
     const searchName = document.getElementById('searchName').value.trim().toLowerCase(); 
     const searchLicense = document.getElementById('searchLicense').value.trim().toUpperCase(); 
 
-    let query = supabase.from('persons').select('*');
+    let query = supabase.from('people').select('*');
     if (searchName !== '') 
     {
         query = query.or(`name.ilike.*${searchName}*`); 
     }
     if (searchLicense !== '') 
     {
-        query = query.or(`licensenumber.eq.${searchLicense}`);
+        query = query.or(`license_number.eq.${searchLicense}`);
     }
 
     const { data, error } = await query;
