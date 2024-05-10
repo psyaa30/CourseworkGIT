@@ -162,7 +162,7 @@ document.getElementById('submitBtn').addEventListener('click', async () =>
                         <p>Name: ${person.name}</p>
                         <p>Address: ${person.address}</p>
                         <p>Date of Birth: ${person.dob}</p>
-                        <p>License Number: ${person.licensenumber}</p>
+                        <p>License Number: ${person.license_number}</p>
                         <p>Expiry Date: ${person.expirydate}</p>
                     </div>
                 `;
