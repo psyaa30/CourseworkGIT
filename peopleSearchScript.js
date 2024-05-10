@@ -121,42 +121,34 @@
 ////
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
-const supabase = createClient('https://mfhrllsznlxvbhnxcvll.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1maHJsbHN6bmx4dmJobnhjdmxsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxMjYyOTQsImV4cCI6MjAzMDcwMjI5NH0.UbF_JOJIntL7oYhbkzr_k1P_1E_B0ulwtBEdEOquyS4');
+const supabase = createClient('https://mfhrllsznlxvbhnxcvll.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1maHJsbHN6bmx4dmJobnhjdmxsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxMjYyOTQsImV4cCI6MjAzMDcwMjI5NH0.UbF_JOJIntL7oYhbkzr_k1P_1E_B0ulwtBEdEOquyS4');
 
-document.getElementById('submitBtn').addEventListener('click', async () => 
-{
+document.getElementById('submitBtn').addEventListener('click', async () => {
     const searchName = document.getElementById('searchName').value.trim()//.toLowerCase(); 
-    const searchLicense = document.getElementById('searchLicense').value.trim().toUpperCase(); 
+    const searchLicense = document.getElementById('searchLicense').value.trim().toUpperCase();
 
     let query = supabase.from('people').select('*');
-    if (searchName !== '') 
-    {
-        query = query.or(`name.ilike.*${searchName}*`); 
+    if (searchName !== '') {
+        query = query.or(`name.ilike.*${searchName}*`);
     }
-    if (searchLicense !== '') 
-    {
+    if (searchLicense !== '') {
         query = query.or(`license_number.eq.${searchLicense}`);
     }
 
     const { data, error } = await query;
 
     const resultDiv = document.querySelector('main > div.result'); // Select the result container using the class
-    if (error) 
-    {
+    if (error) {
         resultDiv.innerText = 'Error';
         console.error(error);
-    } 
-    else 
-    {
-        if (data.length === 0) 
-        {
+    }
+    else {
+        if (data.length === 0) {
             resultDiv.innerText = 'No results';
-        } 
-        else 
-        {
+        }
+        else {
             let resultHTML = '';
-            data.forEach(person => 
-                {
+            data.forEach(person => {
                 resultHTML += `
                     <div class="person-info">
                         <p>Name: ${person.name}</p>

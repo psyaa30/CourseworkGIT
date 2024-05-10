@@ -2,64 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Add Vehicle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle add page</title>
     <link rel="stylesheet" href="styles.css">
+
+    <script type="module" src="addVehicle.js"></script>
 </head>
 <body>
     <header>
-        <ul id="navigation">
-            <li><a href="index.html">People Search</a></li>
-            <li><a href="vehicle_search.html">Vehicle Search</a></li>
-            <li><a href="add_vehicle.html">Add a Vehicle</a></li>
-        </ul>
+        <h1>Add Vehicle</h1>
+        <nav class="nav-links">
+            <ul>
+                <li><a href="add_vehicle.html">Vehicle Add</a>
+                <li><a href="index.html">People Search</a>
+            </ul>
+        </nav>
     </header>
-    <main id="container">
-        <h1>Add a Vehicle</h1>
-        <form id="addVehicleForm">
-            <label for="rego">Registration Number:</label>
-            <input type="text" id="rego" name="rego" placeholder="Enter registration number" required>
 
-            <label for="make">Make:</label>
-            <input type="text" id="make" name="make" placeholder="Enter make" required>
-
-            <label for="model">Model:</label>
-            <input type="text" id="model" name="model" placeholder="Enter model" required>
-
-            <label for="colour">Colour:</label>
-            <input type="text" id="colour" name="colour" placeholder="Enter colour" required>
-
-            <label for="owner">Owner's Name:</label>
-            <input type="text" id="owner" name="owner" placeholder="Enter owner's name" required>
-
-            <!-- New owner details form appears here if the owner does not exist in the database -->
-            <div id="newOwnerDetails" style="display:none;">
-                <h2>Add New Owner</h2>
-                <label for="personid">Person ID:</label>
-                <input type="text" id="personid" name="personid" placeholder="Enter person ID">
-
-                <label for="name">Owner Name:</label>
-                <input type="text" id="name" name="name" placeholder="Enter owner's name">
-
-                <label for="address">Address:</label>
-                <input type="text" id="address" name="address" placeholder="Enter address">
-
-                <label for="dob">Date of Birth:</label>
-                <input type="date" id="dob" name="dob">
-
-                <label for="license">License Number:</label>
-                <input type="text" id="license" name="license" placeholder="Enter license number">
-
-                <label for="expire">License Expiry Date:</label>
-                <input type="date" id="expire" name="expire">
-            </div>
-
-            <button type="submit">Add Vehicle</button>
-        </form>
-        <div id="message"></div>
+    <main>
+        <style>
+            div.result 
+            {
+                width: 600px;
+                border: 15px solid rgb(99, 99, 99);
+                padding: 50px;
+                margin: 20px;
+                display: flex; /* Ensure the divs appear side by side */
+                flex-wrap: wrap; /* Allow wrapping if necessary */
+            }
+        </style>
+        <label for="addPlate">Car number plate:</label>
+        <input type="text" id="addPlate" name="addPlate">
+        <br><br><label for="addMake">Vehicle make:</label>
+        
+        <input type="text" id="addMake" name="addMake">
+        <br><br><label for="addModel">Vehicle model:</label>
+        <input type="text" id="addModel" name="addModel">
+        <br><br><label for="addColour">Vehicle colour:</label>
+        <input type="text" id="addColour" name="addColour">
+        <br><br><label for="addID">Owner ID:</label>
+        <input type="text" id="addID" name="addID">
+        <br><br><button type="button" id="submitBtn">Submit</button>
+        <div class="result"></div>
     </main>
+    <aside class="sidebar"> <!-- Changed sidebar to aside for semantic correctness -->
+        <img src="CARPHOTO.avif" alt="Sidebar Image" width="260"> <!-- Add your image path here -->
+    </aside>
     <footer>
-        <p>© 2024 Coursework Example</p>
+        <p>This is a sample for the COMP1004 coursework<p>
     </footer>
-    <script src="app.js" type="module"></script>
 </body>
 </html>

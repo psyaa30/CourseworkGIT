@@ -1,72 +1,94 @@
-/* Basic styles */
-body, html {
+
+/* Reset some default styles */
+body, h1, p, ul 
+{
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
 }
 
-header, footer {
+/* Apply border, margin, and padding */
+header, main, footer, aside
+{
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 15px;
     text-align: center;
-    padding: 10px;
-    background-color: #f1f1f1;
 }
 
-ul#navigation {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+
+
+/* Flexbox for horizontal navigation links */
+.nav-links ul 
+{
     display: flex;
     justify-content: space-between;
-    background-color: #333;
-    color: white;
+    list-style-type: none; /* Removing bullet points */
 }
 
-ul#navigation li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
+.nav-links li
+{
+    width: 100%;
+}
+
+.nav-links a 
+{
     display: block;
-}
-
-main {
-    display: grid;
-    grid-template-columns: 1fr 4fr; /* Main content is four times the size of the sidebar */
-    gap: 10px;
-}
-
-aside {
-    grid-column: 1;
-}
-
-#results {
-    grid-column: 2;
-    border: dashed 1px black;
-    padding: 10px;
-    min-height: 150px;
-}
-
-footer {
-    grid-column: 1 / -1; /* Stretch across all columns */
     text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: black;
 }
 
-/* Responsive styles */
-@media (max-width: 500px) {
-    ul#navigation {
+/* Grid layout */
+body 
+{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+}
+
+header 
+{
+    grid-area: header;
+}
+
+.nav-links 
+{
+    grid-area: sidebar;
+}
+
+main 
+{
+    grid-area: main;
+
+}
+
+footer 
+{
+    grid-area: footer;
+}
+
+/* Media query for responsive design */
+@media (max-width: 500px) 
+{
+    /* Change flex to block for vertical stacking of links */
+    .nav-links ul 
+    {
         flex-direction: column;
     }
 
-    main {
-        grid-template-columns: 1fr; /* Stack sidebar and main content */
-    }
-
-    aside {
-        order: 2; /* Move sidebar under the main content */
-    }
-
-    footer {
+    /* Move sidebar under the main */
+    .nav-links 
+    {
         order: 3;
-        grid-column: 1;
-        width: 100%; /* Ensure footer stretches across the width */
+    }
+    /* Adjust width ratio between sidebar and footer */
+    main 
+    {
+        grid-area: sidebar;
     }
 }
+
