@@ -22,7 +22,7 @@ export async function searchPeople(event) {
         const { data: people, error } = await supabase
             .from('people')
             .select('*')
-            .or(`name.ilike.%25${nameOrLicense}%25,license_number.ilike.%25${nameOrLicense}%25`);
+           // .or(`name.ilike.%25${nameOrLicense}%25,license_number.ilike.%25${nameOrLicense}%25`);
 
         console.log("Received data:", people); // Debug output
         console.log("API Error:", error);  // Debug errors
