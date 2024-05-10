@@ -32,7 +32,7 @@ export async function searchPeople(event) {
 
         if (error) throw error;
 
-        displayResults(data, 'people');
+        displayResults(people, 'people');
     } catch (error) {
         document.getElementById('message').innerText = 'Failed to fetch data.';
         console.error('Error:', error);
