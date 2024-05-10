@@ -118,7 +118,7 @@
 // document.getElementById('searchForm')?.addEventListener('submit', searchPeople);
 // document.getElementById('vehicleSearchForm')?.addEventListener('submit', searchVehicle);
 // document.getElementById('addVehicleForm')?.addEventListener('submit', addVehicle);
-
+////
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
 const supabase = createClient('https://mfhrllsznlxvbhnxcvll.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1maHJsbHN6bmx4dmJobnhjdmxsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxMjYyOTQsImV4cCI6MjAzMDcwMjI5NH0.UbF_JOJIntL7oYhbkzr_k1P_1E_B0ulwtBEdEOquyS4');
@@ -130,7 +130,7 @@ document.getElementById('submitBtn').addEventListener('click', async () =>
 
     let query = supabase.from('people').select('*');
     if (searchName !== '') 
-    {//
+    {
         query = query.or(`name.ilike.*${searchName}*`); 
     }
     if (searchLicense !== '') 
