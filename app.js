@@ -26,7 +26,7 @@ export async function searchPeople(event) {
             .from('people')
             .select('*')
             .or(queryString);
-
+//
         console.log("Received data:", people); // Debug output
         console.log("API Error:", error);  // Debug errors
 
