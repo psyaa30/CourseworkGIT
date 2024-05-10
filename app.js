@@ -125,7 +125,7 @@ const supabase = createClient('https://mfhrllsznlxvbhnxcvll.supabase.co','eyJhbG
 
 document.getElementById('submitBtn').addEventListener('click', async () => 
 {
-    const searchName = document.getElementById('searchName').value.trim().toLowerCase(); 
+    const searchName = document.getElementById('searchName').value.trim()//.toLowerCase(); 
     const searchLicense = document.getElementById('searchLicense').value.trim().toUpperCase(); 
 
     let query = supabase.from('people').select('*');
