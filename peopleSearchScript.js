@@ -124,7 +124,7 @@ import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 const supabase = createClient('https://mfhrllsznlxvbhnxcvll.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1maHJsbHN6bmx4dmJobnhjdmxsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxMjYyOTQsImV4cCI6MjAzMDcwMjI5NH0.UbF_JOJIntL7oYhbkzr_k1P_1E_B0ulwtBEdEOquyS4');
 
 document.getElementById('submitBtn').addEventListener('click', async () => {
-    const searchName = document.getElementById('searchName').value.trim()//.toLowerCase(); 
+    const searchName = document.getElementById('searchName').value.trim().toLowerCase(); 
     const searchLicense = document.getElementById('searchLicense').value.trim().toUpperCase();
 
     let query = supabase.from('people').select('*');
@@ -148,27 +148,17 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
         }
         else {
             let resultHTML = '';
-            // data.forEach(person => {
-            //     resultHTML += `
-            //         <div class="person-info">
-            //             <p>Name: ${person.name}</p>
-            //             <p>Address: ${person.address}</p>
-            //             <p>Date of Birth: ${person.dob}</p>
-            //             <p>License Number: ${person.license_number}</p>
-            //             <p>Expiry Date: ${person.expirydate}</p>
-            //         </div>
-            //     `;
-            // });
-            data.forEach(item => {
-                const div = document.createElement('div');
-                if (type === 'people') {
-                    div.innerText = `Name: ${item.name}, License: ${item.license_number}`;
-                } else if (type === 'vehicle') {
-                    div.innerText = `Registration: ${item.registration_number}, Make: ${item.make}, Model: ${item.model}, Colour: ${item.colour}, Owner: ${item.owner}`;
-                }
-                resultsDiv.appendChild(div);
+            data.forEach(person => {
+                resultHTML += `
+                    <div class="person-info">
+                        <p>Name: ${person.name}</p>
+                        <p>Address: ${person.address}</p>
+                        <p>Date of Birth: ${person.dob}</p>
+                        <p>License Number: ${person.license_number}</p>
+                        <p>Expiry Date: ${person.expirydate}</p>
+                    </div>
+                `;
             });
-            document.getElementById('message').innerText = '';
             resultDiv.innerHTML = resultHTML; // Set the concatenated string as innerHTML
         }
     }
