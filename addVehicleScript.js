@@ -26,7 +26,7 @@ document.getElementById('submitBtn').addEventListener('click', async () =>
         Make: addMake,
         Model: addModel,
         Colour: addColour,
-        CwnerID: addID
+        OwnerID: addID
     };
 
     try 
