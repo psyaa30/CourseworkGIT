@@ -151,11 +151,11 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
             data.forEach(person => {
                 resultHTML += `
                     <div class="person-info">
-                        <p>Name: ${person.name}</p>
-                        <p>Address: ${person.address}</p>
-                        <p>Date of Birth: ${person.dob}</p>
-                        <p>License Number: ${person.license_number}</p>
-                        <p>Expiry Date: ${person.expirydate}</p>
+                        <p>Name: ${person.Name}</p>
+                        <p>Address: ${person.Address}</p>
+                        <p>Date of Birth: ${person.DOB}</p>
+                        <p>License Number: ${person.LicenseNumber}</p>
+                        <p>Expiry Date: ${person.ExpiryDate}</p>
                     </div>
                 `;
             });

@@ -38,11 +38,11 @@ document.getElementById('submitBtn').addEventListener('click', async () =>
                 {
                 resultHTML += `
                     <div class="person-info">
-                        <p>License Plate: ${vehicle.vehicleid}</p>
-                        <p>Make: ${vehicle.make}</p>
-                        <p>Model: ${vehicle.model}</p>
-                        <p>Colour: ${vehicle.colour}</p>
-                        <p>Owner ID: ${vehicle.ownerid}</p>
+                        <p>License Plate: ${vehicle.VehicleID}</p>
+                        <p>Make: ${vehicle.Make}</p>
+                        <p>Model: ${vehicle.Model}</p>
+                        <p>Colour: ${vehicle.Colour}</p>
+                        <p>Owner ID: ${vehicle.OwnerID}</p>
                     </div>
                 `;
             });
