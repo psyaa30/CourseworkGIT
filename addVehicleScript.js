@@ -22,7 +22,7 @@ document.getElementById('submitBtn').addEventListener('click', async () =>
     // Construct the data object to be inserted into the database
     const vehicleData = 
     {
-        vehicleid: addPlate,
+        VehicleID: addPlate,
         Make: addMake,
         Model: addModel,
         Colour: addColour,
