@@ -23,10 +23,10 @@ document.getElementById('submitBtn').addEventListener('click', async () =>
     const vehicleData = 
     {
         vehicleid: addPlate,
-        make: addMake,
-        model: addModel,
-        colour: addColour,
-        ownerid: addID
+        Make: addMake,
+        Model: addModel,
+        Colour: addColour,
+        CwnerID: addID
     };
 
     try 

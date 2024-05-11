@@ -129,10 +129,10 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
 
     let query = supabase.from('people').select('*');
     if (searchName !== '') {
-        query = query.or(`name.ilike.*${searchName}*`);
+        query = query.or(`Name.ilike.*${searchName}*`);
     }
     if (searchLicense !== '') {
-        query = query.or(`license_number.eq.${searchLicense}`);
+        query = query.or(`LicenseNumber.eq.${searchLicense}`);
     }
 
     const { data, error } = await query;

@@ -10,11 +10,11 @@ document.getElementById('submitBtn').addEventListener('click', async () =>
     let query = supabase.from('vehicles').select('*');
     if (searchLicense !== '') 
     {
-        query = query.or(`vehicleid.eq.${searchLicense}`);
+        query = query.or(`VehicleID.eq.${searchLicense}`);
     }
     if (searchMake !== '') 
     {
-        query = query.or(`make.ilike.*${searchMake}*`);
+        query = query.or(`Make.ilike.*${searchMake}*`);
     }
 
     const { data, error } = await query;
