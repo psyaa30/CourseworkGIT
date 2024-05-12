@@ -38,7 +38,6 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
         else {
             resultsDiv.innerText = 'Vehicle added successfully';
             messageDiv.innerText = "Vehicle added successfully";
-            // Clear the input fields after successful addition
             document.getElementById('rego').value = '';
             document.getElementById('make').value = '';
             document.getElementById('model').value = '';
