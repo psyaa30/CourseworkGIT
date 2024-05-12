@@ -137,19 +137,19 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
 
     const { data, error } = await query;
 
-    const resultDiv = document.querySelector('main > div.results'); // Select the result container using the class
+    const resultsDiv = document.querySelector('main > div.results'); // Select the result container using the class
     if (error) {
-        resultDiv.innerText = 'Error';
+        resultsDiv.innerText = 'Error';
         console.error(error);
     }
     else {
         if (data.length === 0) {
-            resultDiv.innerText = 'No results';
+            resultsDiv.innerText = 'No results';
         }
         else {
-            let resultHTML = '';
+            let resultsHTML = '';
             data.forEach(person => {
-                resultHTML += `
+                resultsHTML += `
                     <div class="person-data">
                         <p>Name: ${person.Name}</p>
                         <p>Address: ${person.Address}</p>
@@ -159,7 +159,7 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
                     </div>
                 `;
             });
-            resultDiv.innerHTML = resultHTML; // Set the concatenated string as innerHTML
+            resultsDiv.innerHTML = resultsHTML; // Set the concatenated string as innerHTML
         }
     }
 });

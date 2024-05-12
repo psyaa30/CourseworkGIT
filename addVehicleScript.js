@@ -9,11 +9,11 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
     const addColour = document.getElementById('addColour').value.trim();
     const addID = document.getElementById('addID').value.trim();
 
-    const resultDiv = document.querySelector('main > div.results');
+    const resultsDiv = document.querySelector('main > div.results');
 
     // Check if any field is empty
     if (!addPlate || !addMake || !addModel || !addColour || !addID) {
-        resultDiv.innerText = 'Please fill in all of the boxs.';
+        resultsDiv.innerText = 'Please fill in all of the boxs.';
         return;
     }
 
@@ -31,11 +31,11 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
         const { data, error } = await supabase.from('vehicles').insert([vehicleData]);
 
         if (error) {
-            resultDiv.innerText = 'Error';
+            resultsDiv.innerText = 'Error';
             console.error(error);
         }
         else {
-            resultDiv.innerText = 'Vehicle added successfully!';
+            resultsDiv.innerText = 'Vehicle added successfully!';
             // Clear the input fields after successful addition
             document.getElementById('addPlate').value = '';
             document.getElementById('addMake').value = '';
