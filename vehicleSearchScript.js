@@ -4,14 +4,14 @@ const supabase = createClient('https://mfhrllsznlxvbhnxcvll.supabase.co', 'eyJhb
 
 document.getElementById('submitBtn').addEventListener('click', async () => {
     const rego = document.getElementById('rego').value.trim().toUpperCase();
-    const searchMake = document.getElementById('searchMake').value.trim().toLowerCase();
+    const make = document.getElementById('make').value.trim().toLowerCase();
 
     let query = supabase.from('vehicles').select('*');
     if (rego !== '') {
         query = query.or(`VehicleID.eq.${rego}`);
     }
-    if (searchMake !== '') {
-        query = query.or(`Make.ilike.*${searchMake}*`);
+    if (make !== '') {
+        query = query.or(`Make.ilike.*${make}*`);
     }
 
     const { data, error } = await query;

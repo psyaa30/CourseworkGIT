@@ -4,15 +4,15 @@ const supabase = createClient('https://mfhrllsznlxvbhnxcvll.supabase.co', 'eyJhb
 
 document.getElementById('submitBtn').addEventListener('click', async () => {
     const rego = document.getElementById('rego').value.trim().toUpperCase();
-    const addMake = document.getElementById('addMake').value.trim();
-    const addModel = document.getElementById('addModel').value.trim();
-    const addColour = document.getElementById('addColour').value.trim();
-    const addID = document.getElementById('addID').value.trim();
+    const make = document.getElementById('make').value.trim();
+    const model = document.getElementById('model').value.trim();
+    const colour = document.getElementById('colour').value.trim();
+    const owner = document.getElementById('owner').value.trim();
 
     const resultsDiv = document.querySelector('main > div.results');
 
     // Check if any field is empty
-    if (!rego || !addMake || !addModel || !addColour || !addID) {
+    if (!rego || !make || !model || !colour || !owner) {
         resultsDiv.innerText = 'Please fill in all of the boxs.';
         return;
     }
@@ -20,10 +20,10 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
     // Construct the data object to be inserted into the database
     const vehicleData = {
         VehicleID: rego,
-        Make: addMake,
-        Model: addModel,
-        Colour: addColour,
-        OwnerID: addID
+        Make: make,
+        Model: model,
+        Colour: colour,
+        OwnerID: owner
     };
 
     try {
@@ -38,10 +38,10 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
             resultsDiv.innerText = 'Vehicle added successfully';
             // Clear the input fields after successful addition
             document.getElementById('rego').value = '';
-            document.getElementById('addMake').value = '';
-            document.getElementById('addModel').value = '';
-            document.getElementById('addColour').value = '';
-            document.getElementById('addID').value = '';
+            document.getElementById('make').value = '';
+            document.getElementById('model').value = '';
+            document.getElementById('colour').value = '';
+            document.getElementById('owner').value = '';
         }
     }
     catch (error) {
