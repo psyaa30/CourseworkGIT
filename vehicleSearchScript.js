@@ -17,13 +17,17 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
     const { data, error } = await query;
 
     const resultsDiv = document.querySelector('main > div.results');
+    const messageDiv = document.getElementById('message'); 
+
     if (error) {
         resultsDiv.innerText = 'Error';
         console.error(error);
+        messageDiv.innerText = "Search failed";
     }
     else {
         if (data.length === 0) {
             resultsDiv.innerText = 'No results';
+            messageDiv.innerText = 'Search yielded no results';
         }
         else {
             let resultsHTML = '';
@@ -39,6 +43,7 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
                 `;
             });
             resultsDiv.innerHTML = resultsHTML;
+            messageDiv.innerText = 'Search successful'; 
         }
     }
 });

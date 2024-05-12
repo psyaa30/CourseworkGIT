@@ -10,6 +10,7 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
     const owner = document.getElementById('owner').value.trim();
 
     const resultsDiv = document.querySelector('main > div.results');
+    const messageDiv = document.getElementById('message'); 
 
     // Check if any field is empty
     if (!rego || !make || !model || !colour || !owner) {
@@ -36,6 +37,7 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
         }
         else {
             resultsDiv.innerText = 'Vehicle added successfully';
+            messageDiv.innerText = "Vehicle added successfully";
             // Clear the input fields after successful addition
             document.getElementById('rego').value = '';
             document.getElementById('make').value = '';
