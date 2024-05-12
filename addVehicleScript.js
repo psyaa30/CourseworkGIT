@@ -9,7 +9,7 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
     const addColour = document.getElementById('addColour').value.trim();
     const addID = document.getElementById('addID').value.trim();
 
-    const resultDiv = document.querySelector('main > div.result');
+    const resultDiv = document.querySelector('main > div.results');
 
     // Check if any field is empty
     if (!addPlate || !addMake || !addModel || !addColour || !addID) {
@@ -25,7 +25,7 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
         Colour: addColour,
         OwnerID: addID
     };
-    
+
     try {
         // Insert the data into the database
         const { data, error } = await supabase.from('vehicles').insert([vehicleData]);

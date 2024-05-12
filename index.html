@@ -41,7 +41,7 @@
     <title>People search page</title>
     <link rel="stylesheet" href="styles.css">
 
-    <script type="module" src="peopleSearchScript.js"></script>
+    <script type="module" src="indexscript.js"></script>
 </head>
 
 <body>
@@ -50,26 +50,26 @@
         <nav class="nav-links">
             <ul>
                 <li><a href="index.html">People Search</a></li>
-                <li><a href="vehicle_search.html">Vehicle Search</a></li>
-                <li><a href="add_vehicle.html">Vehicle Add</a></li>
+                <li><a href="vehiclesearch.html">Vehicle Search</a></li>
+                <li><a href="addvehicle.html">Vehicle Add</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <style>
-            div.result {
+            div.results {
                 width: 600px;
                 border: 15px solid rgb(99, 99, 99);
                 padding: 50px;
                 margin: 20px;
-                display: flex; /* Ensure the divs appear side by side */
-                flex-wrap: wrap; /* Allow wrapping if necessary */
+                display: flex;
+                flex-wrap: wrap;
             }
 
-            div.person-info {
-                flex: 1; /* Equal width for each person's info */
-                margin: 10px; /* Add some space between the divs */
+            div.person-data {
+                flex: 1;
+                margin: 10px;
             }
         </style>
         <label for="searchName">Search by driver name:</label>
@@ -77,7 +77,7 @@
         <br><br><label for="searchLicense">Search by driving license number:</label>
         <input type="text" id="searchLicense" name="searchLicense">
         <br><br><button type="button" id="submitBtn">Submit</button>
-        <div class="result"></div> <!-- Use a class to style the result container -->
+        <div class="result"></div>
     </main>
     <aside class="sidebar">
         <img src="CARPHOTO.avif" alt="Sidebar Image" width="270">

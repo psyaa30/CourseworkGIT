@@ -19,7 +19,7 @@ document.getElementById('submitBtn').addEventListener('click', async () =>
 
     const { data, error } = await query;
 
-    const resultDiv = document.querySelector('main > div.result');
+    const resultDiv = document.querySelector('main > div.results');
     if (error) 
     {
         resultDiv.innerText = 'Error';
@@ -37,7 +37,7 @@ document.getElementById('submitBtn').addEventListener('click', async () =>
             data.forEach(vehicle => 
                 {
                 resultHTML += `
-                    <div class="person-info">
+                    <div class="person-data">
                         <p>License Plate: ${vehicle.VehicleID}</p>
                         <p>Make: ${vehicle.Make}</p>
                         <p>Model: ${vehicle.Model}</p>

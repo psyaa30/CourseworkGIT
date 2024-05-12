@@ -137,7 +137,7 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
 
     const { data, error } = await query;
 
-    const resultDiv = document.querySelector('main > div.result'); // Select the result container using the class
+    const resultDiv = document.querySelector('main > div.results'); // Select the result container using the class
     if (error) {
         resultDiv.innerText = 'Error';
         console.error(error);
@@ -150,7 +150,7 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
             let resultHTML = '';
             data.forEach(person => {
                 resultHTML += `
-                    <div class="person-info">
+                    <div class="person-data">
                         <p>Name: ${person.Name}</p>
                         <p>Address: ${person.Address}</p>
                         <p>Date of Birth: ${person.DOB}</p>
