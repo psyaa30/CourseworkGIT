@@ -54,7 +54,12 @@
 </body>
 </html> -->
 
-<!DOCTYPE html>
+
+
+
+<!-- --------------------------- -->
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -95,20 +100,21 @@
         <input type="text" id="colour" name="colour">
         <br><br><label for="owner">Owner ID:</label>
         <input type="text" id="owner" name="owner">
-        <br><br><button type="button" id="submitBtn">Add vehicle</button>
+        <br><br><button type="button" id="submitVehicleBtn">Add vehicle</button>
         <div id="results" class="results"></div>
-        <p id="message"></p>
 
-        <div id="addPersonForm">
-            <input type="text" id="personid" name="personid" placeholder="Person ID">
-            <input type="text" id="name" name="name" placeholder="Name">
-            <input type="text" id="address" name="address" placeholder="Address">
+        <div id="ownerForm" style="display: none;">
+            <input type="text" id="personid" name="personid" placeholder="Owner ID">
+            <input type="text" id="name" name="name" placeholder="Owner Name">
+            <input type="text" id="address" name="address" placeholder="Owner Address">
             <input type="date" id="dob" name="dob" placeholder="Date of Birth">
             <input type="text" id="license" name="license" placeholder="License Number">
             <input type="date" id="expire" name="expire" placeholder="License Expiry Date">
-            <button type="button" id="addPersonBtn">Add owner</button>
+            <button type="button" id="submitOwnerBtn">Add owner</button>
         </div>
-        
+    
+        <p id="message"></p>
+
     </main>
     <aside class="sidebar"> 
         <img src="CARPHOTO.avif" alt="Sidebar Image" width="270">
@@ -117,4 +123,86 @@
         <p>This is a sample for the COMP1004 coursework</p>
     </footer>
 </body>
+</html> -->
+
+<!-- --------------------------- -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a Vehicle page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="addVehicleScript.js" defer></script>
+</head>
+
+<body id="container">
+    <header>
+        <h1>Add a Vehicle</h1>
+        <nav class="nav-links">
+            <ul>
+                <li><a href="vehiclesearch.html">Vehicle search</a></li>
+                <li><a href="index.html">People search</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Vehicle addition form -->
+        <div id="vehicleForm">
+            <label for="rego">Car rego:</label>
+            <input type="text" id="rego" name="rego">
+            <br><br>
+            <label for="make">Vehicle make:</label>
+            <input type="text" id="make" name="make">
+            <br><br>
+            <label for="model">Vehicle model:</label>
+            <input type="text" id="model" name="model">
+            <br><br>
+            <label for="colour">Vehicle colour:</label>
+            <input type="text" id="colour" name="colour">
+            <br><br>
+            <label for="owner">Owner ID:</label>
+            <input type="text" id="owner" name="owner">
+            <br><br>
+            <button type="button" id="submitVehicleBtn">Add vehicle</button>
+        </div>
+
+        <!-- Owner addition form, initially hidden -->
+        <div id="ownerForm" style="display: none;">
+            <label for="personid">Owner ID:</label>
+            <input type="text" id="personid" name="personid">
+            <br><br>
+            <label for="name">Owner name:</label>
+            <input type="text" id="name" name="name">
+            <br><br>
+            <label for="address">Owner address:</label>
+            <input type="text" id="address" name="address">
+            <br><br>
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob">
+            <br><br>
+            <label for="license">License Number:</label>
+            <input type="text" id="license" name="license">
+            <br><br>
+            <label for="expire">License Expiry Date:</label>
+            <input type="date" id="expire" name="expire">
+            <br><br>
+            <button type="button" id="submitOwnerBtn">Add owner</button>
+        </div>
+
+        <p id="message"></p>
+    </main>
+
+    <aside class="sidebar">
+        <img src="CARPHOTO.avif" alt="Sidebar Image" width="270">
+    </aside>
+
+    <footer>
+        <p>This is a sample for the COMP1004 coursework</p>
+    </footer>
+</body>
+
 </html>
