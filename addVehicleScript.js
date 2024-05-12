@@ -3,7 +3,7 @@ import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 const supabase = createClient('https://mfhrllsznlxvbhnxcvll.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1maHJsbHN6bmx4dmJobnhjdmxsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxMjYyOTQsImV4cCI6MjAzMDcwMjI5NH0.UbF_JOJIntL7oYhbkzr_k1P_1E_B0ulwtBEdEOquyS4');
 
 document.getElementById('submitBtn').addEventListener('click', async () => {
-    const addPlate = document.getElementById('addPlate').value.trim().toUpperCase();
+    const rego = document.getElementById('rego').value.trim().toUpperCase();
     const addMake = document.getElementById('addMake').value.trim();
     const addModel = document.getElementById('addModel').value.trim();
     const addColour = document.getElementById('addColour').value.trim();
@@ -12,14 +12,14 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
     const resultsDiv = document.querySelector('main > div.results');
 
     // Check if any field is empty
-    if (!addPlate || !addMake || !addModel || !addColour || !addID) {
+    if (!rego || !addMake || !addModel || !addColour || !addID) {
         resultsDiv.innerText = 'Please fill in all of the boxs.';
         return;
     }
 
     // Construct the data object to be inserted into the database
     const vehicleData = {
-        VehicleID: addPlate,
+        VehicleID: rego,
         Make: addMake,
         Model: addModel,
         Colour: addColour,
@@ -35,9 +35,9 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
             console.error(error);
         }
         else {
-            resultsDiv.innerText = 'Vehicle added successfully!';
+            resultsDiv.innerText = 'Vehicle added successfully';
             // Clear the input fields after successful addition
-            document.getElementById('addPlate').value = '';
+            document.getElementById('rego').value = '';
             document.getElementById('addMake').value = '';
             document.getElementById('addModel').value = '';
             document.getElementById('addColour').value = '';
