@@ -89,7 +89,7 @@ body, h1, p, ul {
 
 /* Apply border, margin, and padding */
 header, main, footer, aside {
-    border: 1px solid #ccc;
+    border: 1px solid rgb(0, 0, 0);
     margin: 10px;
     padding: 10px;
     text-align: center;
