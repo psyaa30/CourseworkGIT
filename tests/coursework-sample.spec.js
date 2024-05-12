@@ -1,7 +1,7 @@
 import exp from 'constants';
 
 // @ts-check
-const { test, expect} = require('@playwright/test');
+import { test, expect } from '@playwright/test';
 
 // change this to the URL of your website, could be local or GitHub pages
 const websiteURL = 'https://psyaa30.github.io/CourseworkGIT/';
