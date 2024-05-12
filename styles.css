@@ -1,30 +1,24 @@
-
-/* Reset some default styles */
-body, h1, p, ul 
+/* body, h1, p, ul 
 {
     margin: 0;
     padding: 0;
 }
 
-/* Apply border, margin, and padding */
 header, main, footer, aside
 {
     border: 1px solid #ccc;
     margin: 10px;
-    padding: 15px;
+    padding: 10px;
     text-align: center;
 }
 
 
-
-/* Flexbox for horizontal navigation links */
 .nav-links ul 
 {
     display: flex;
     justify-content: space-between;
-    list-style-type: none; /* Removing bullet points */
+    list-style-type: none;
 }
-
 .nav-links li
 {
     width: 100%;
@@ -39,7 +33,6 @@ header, main, footer, aside
     color: black;
 }
 
-/* Grid layout */
 body 
 {
     display: grid;
@@ -71,24 +64,98 @@ footer
     grid-area: footer;
 }
 
-/* Media query for responsive design */
 @media (max-width: 500px) 
 {
-    /* Change flex to block for vertical stacking of links */
     .nav-links ul 
     {
         flex-direction: column;
     }
 
-    /* Move sidebar under the main */
     .nav-links 
     {
         order: 3;
     }
-    /* Adjust width ratio between sidebar and footer */
     main 
     {
         grid-area: sidebar;
     }
+} */
+
+/* Reset some default styles */
+body, h1, p, ul {
+    margin: 0;
+    padding: 0;
 }
 
+/* Apply border, margin, and padding */
+header, main, footer, aside {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Flexbox for horizontal navigation links */
+.nav-links ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none; /* Removing bullet points */
+}
+
+.nav-links li {
+    width: 100%;
+}
+
+.nav-links a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: black;
+}
+
+/* Grid layout for container */
+#container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+}
+
+header {
+    grid-area: header;
+}
+
+aside {
+    grid-area: sidebar;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+}
+
+/* Media query for responsive design */
+@media (max-width: 500px) {
+    .nav-links ul {
+        flex-direction: column;
+    }
+    
+    #container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "header"
+        "main"
+        "sidebar"
+        "footer";
+    }
+
+    aside {
+        grid-area: sidebar;
+    }
+}
