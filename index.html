@@ -120,6 +120,21 @@
         </nav>
     </header>
     <main>
+        <style>
+            div.results {
+                width: 600px;
+                border: 15px solid rgb(99, 99, 99);
+                padding: 50px;
+                margin: 20px;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            div.person-data {
+                flex: 1;
+                margin: 10px;
+            }
+        </style>
         <label for="searchName">Search by driver name:</label>
         <input type="text" id="searchName" name="searchName">
         <br><br><label for="searchLicense">Search by driving license number:</label>
