@@ -124,15 +124,15 @@ import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 const supabase = createClient('https://mfhrllsznlxvbhnxcvll.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1maHJsbHN6bmx4dmJobnhjdmxsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxMjYyOTQsImV4cCI6MjAzMDcwMjI5NH0.UbF_JOJIntL7oYhbkzr_k1P_1E_B0ulwtBEdEOquyS4');
 
 document.getElementById('submitBtn').addEventListener('click', async () => {
-    const searchName = document.getElementById('searchName').value.trim().toLowerCase(); 
-    const searchLicense = document.getElementById('searchLicense').value.trim().toUpperCase();
+    const name = document.getElementById('name').value.trim().toLowerCase(); 
+    const license = document.getElementById('license').value.trim().toUpperCase();
 
     let query = supabase.from('people').select('*');
-    if (searchName !== '') {
-        query = query.or(`Name.ilike.*${searchName}*`);
+    if (name !== '') {
+        query = query.or(`Name.ilike.*${name}*`);
     }
-    if (searchLicense !== '') {
-        query = query.or(`LicenseNumber.eq.${searchLicense}`);
+    if (license !== '') {
+        query = query.or(`LicenseNumber.eq.${license}`);
     }
 
     const { data, error } = await query;
@@ -151,11 +151,12 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
             data.forEach(person => {
                 resultsHTML += `
                     <div class="person-data">
-                        <p>Name: ${person.Name}</p>
-                        <p>Address: ${person.Address}</p>
-                        <p>Date of Birth: ${person.DOB}</p>
-                        <p>License Number: ${person.LicenseNumber}</p>
-                        <p>Expiry Date: ${person.ExpiryDate}</p>
+                        <p>personid: ${person.PersonID}</p>
+                        <p>name: ${person.Name}</p>
+                        <p>address: ${person.Address}</p>
+                        <p>dob: ${person.DOB}</p>
+                        <p>licensenumber: ${person.LicenseNumber}</p>
+                        <p>expirydate: ${person.ExpiryDate}</p>
                     </div>
                 `;
             });
