@@ -1,93 +1,8 @@
-/* body, h1, p, ul 
-{
-    margin: 0;
-    padding: 0;
-}
-
-header, main, footer, aside
-{
-    border: 1px solid #ccc;
-    margin: 10px;
-    padding: 10px;
-    text-align: center;
-}
-
-
-.nav-links ul 
-{
-    display: flex;
-    justify-content: space-between;
-    list-style-type: none;
-}
-.nav-links li
-{
-    width: 100%;
-}
-
-.nav-links a 
-{
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    color: black;
-}
-
-body 
-{
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-areas:
-    "header header"
-    "sidebar main"
-    "footer footer";
-}
-
-header 
-{
-    grid-area: header;
-}
-
-.nav-links 
-{
-    grid-area: sidebar;
-}
-
-main 
-{
-    grid-area: main;
-
-}
-
-footer 
-{
-    grid-area: footer;
-}
-
-@media (max-width: 500px) 
-{
-    .nav-links ul 
-    {
-        flex-direction: column;
-    }
-
-    .nav-links 
-    {
-        order: 3;
-    }
-    main 
-    {
-        grid-area: sidebar;
-    }
-} */
-
-/* Reset some default styles */
 body, h1, p, ul {
     margin: 0;
     padding: 0;
 }
 
-/* Apply border, margin, and padding */
 header, main, footer, aside {
     border: 1px solid rgb(0, 0, 0);
     margin: 10px;
@@ -95,11 +10,10 @@ header, main, footer, aside {
     text-align: center;
 }
 
-/* Flexbox for horizontal navigation links */
 .nav-links ul {
     display: flex;
     justify-content: space-between;
-    list-style-type: none; /* Removing bullet points */
+    list-style-type: none;
 }
 
 .nav-links li {
@@ -114,7 +28,6 @@ header, main, footer, aside {
     color: black;
 }
 
-/* Grid layout for container */
 #container {
     display: grid;
     grid-template-columns: 1fr 3fr;
@@ -140,7 +53,6 @@ footer {
     grid-area: footer;
 }
 
-/* Media query for responsive design */
 @media (max-width: 500px) {
     .nav-links ul {
         flex-direction: column;

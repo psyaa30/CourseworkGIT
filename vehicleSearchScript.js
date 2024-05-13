@@ -19,15 +19,15 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
     const resultsDiv = document.querySelector('main > div.results');
     const messageDiv = document.getElementById('message'); 
 
-    if (error) {
+    if (error || rego == "") {
         resultsDiv.innerText = 'Error';
         console.error(error);
-        messageDiv.innerText = "Search failed";
+        messageDiv.innerText = "Error";
     }
     else {
         if (data.length === 0) {
-            resultsDiv.innerText = 'No results';
-            messageDiv.innerText = 'Search yielded no results';
+            resultsDiv.innerText = 'No result found';
+            messageDiv.innerText = 'No result found';
         }
         else {
             let resultsHTML = '';
