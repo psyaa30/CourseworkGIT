@@ -93,8 +93,9 @@ async function submitVehicle() {
     }
 
     const { info, err } = await supabase.from('people').select('*').eq('Name', owner);
+    const ownerPLHL = "";
 
-    const vehicleData = { VehicleID: rego, Make: make, Model: model, Colour: colour, OwnerID: info.PersonID };
+    const vehicleData = { VehicleID: rego, Make: make, Model: model, Colour: colour, OwnerID: info.forEach(p=>{ownerPLHL += p.PersonID}) };
     const { data, error } = await supabase.from('vehicles').insert([vehicleData]);
 
     if (error) {
