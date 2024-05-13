@@ -21,7 +21,6 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
 
     if (error || rego == "") {
         resultsDiv.innerText = 'Error';
-        console.error(error);
         messageDiv.innerText = "Error";
     }
     else {

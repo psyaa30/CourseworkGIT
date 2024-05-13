@@ -21,8 +21,7 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
 
     if (error || (name && license !== '')) {
         resultsDiv.innerText = 'Error';
-        console.error(error);
-        messageDiv.innerText = "Error";
+        messageDiv.innerText = 'Error';
     }
     else {
         if (data.length === 0) {
