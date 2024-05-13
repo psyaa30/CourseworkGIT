@@ -85,14 +85,16 @@ async function submitVehicle() {
     const make = document.getElementById('make').value.trim();
     const model = document.getElementById('model').value.trim();
     const colour = document.getElementById('colour').value.trim();
-    const owner = document.getElementById('personid').value.trim();
+    const owner = document.getElementById('owner').value.trim();
 
     if (!rego || !make || !model || !colour || !owner) {
         document.getElementById('message').innerText = 'Please fill in all vehicle fields.';
         return;
     }
 
-    const vehicleData = { VehicleID: rego, Make: make, Model: model, Colour: colour, OwnerID: owner };
+    const { info, err } = await supabase.from('people').select('*').eq('Name', ownerName);
+
+    const vehicleData = { VehicleID: rego, Make: make, Model: model, Colour: colour, OwnerID: info.PersonID };
     const { data, error } = await supabase.from('vehicles').insert([vehicleData]);
 
     if (error) {
