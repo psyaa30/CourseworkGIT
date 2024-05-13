@@ -93,7 +93,7 @@ async function submitVehicle() {
     }
 
     const { data, error } = await supabase.from('people').select('*').or(`Name.ilike.*${owner}*`);
-    const ownerPLHL = "";
+    let ownerPLHL = "";
     data.forEach(p=>{
        ownerPLHL += `${p.PersonID}`
     });
