@@ -92,7 +92,7 @@ async function submitVehicle() {
         return;
     }
 
-    const { info, err } = await supabase.from('people').select('*').eq('Name', ownerName);
+    const { info, err } = await supabase.from('people').select('*').eq('Name', owner);
 
     const vehicleData = { VehicleID: rego, Make: make, Model: model, Colour: colour, OwnerID: info.PersonID };
     const { data, error } = await supabase.from('vehicles').insert([vehicleData]);
