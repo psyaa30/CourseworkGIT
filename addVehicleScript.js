@@ -92,10 +92,13 @@ async function submitVehicle() {
         return;
     }
 
-    const { info, err } = await supabase.from('people').select('*').eq('Name', owner);
+    const { info, err } = await supabase.from('people').select('*').or(`Name.ilike.*${owner}*`);
     const ownerPLHL = "";
+    info.forEach(p=>{
+       ownerPLHL += `${p.PersonID}`
+    });
 
-    const vehicleData = { VehicleID: rego, Make: make, Model: model, Colour: colour, OwnerID: info.forEach(p=>{ownerPLHL += p.PersonID}) };
+    const vehicleData = { VehicleID: rego, Make: make, Model: model, Colour: colour, OwnerID: parseInt(ownerPLHL) };
     const { data, error } = await supabase.from('vehicles').insert([vehicleData]);
 
     if (error) {
