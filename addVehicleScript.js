@@ -85,7 +85,7 @@ async function submitVehicle() {
     const make = document.getElementById('make').value.trim();
     const model = document.getElementById('model').value.trim();
     const colour = document.getElementById('colour').value.trim();
-    const owner = document.getElementById('owner').value.trim();
+    const owner = document.getElementById('personid').value.trim();
 
     if (!rego || !make || !model || !colour || !owner) {
         document.getElementById('message').innerText = 'Please fill in all vehicle fields.';
