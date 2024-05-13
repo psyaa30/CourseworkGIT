@@ -20,7 +20,7 @@ document.getElementById('submitOwnerBtn').addEventListener('click', async () => 
 
 async function checkOwnerExists(ownerName) {
     const { data, error } = await supabase.from('people').select('*').eq('Name', ownerName);
-    return data.length > 0; 
+    return data.length > 0;
 }
 
 async function submitVehicle() {

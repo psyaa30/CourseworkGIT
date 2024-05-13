@@ -3,7 +3,7 @@ import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 const supabase = createClient('https://mfhrllsznlxvbhnxcvll.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1maHJsbHN6bmx4dmJobnhjdmxsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxMjYyOTQsImV4cCI6MjAzMDcwMjI5NH0.UbF_JOJIntL7oYhbkzr_k1P_1E_B0ulwtBEdEOquyS4');
 
 document.getElementById('submitBtn').addEventListener('click', async () => {
-    const name = document.getElementById('name').value.trim().toLowerCase(); 
+    const name = document.getElementById('name').value.trim().toLowerCase();
     const license = document.getElementById('license').value.trim().toUpperCase();
 
     let query = supabase.from('people').select('*');
@@ -16,8 +16,8 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
 
     const { data, error } = await query;
 
-    const resultsDiv = document.querySelector('main > div.results'); 
-    const messageDiv = document.getElementById('message'); 
+    const resultsDiv = document.querySelector('main > div.results');
+    const messageDiv = document.getElementById('message');
 
     if (error || (name && license !== '')) {
         resultsDiv.innerText = 'Error';
@@ -43,7 +43,7 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
                 `;
             });
             resultsDiv.innerHTML = resultsHTML;
-            messageDiv.innerText = 'Search successful'; 
+            messageDiv.innerText = 'Search successful';
         }
     }
 });

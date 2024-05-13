@@ -17,7 +17,7 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
     const { data, error } = await query;
 
     const resultsDiv = document.querySelector('main > div.results');
-    const messageDiv = document.getElementById('message'); 
+    const messageDiv = document.getElementById('message');
 
     if (error || rego == "") {
         resultsDiv.innerText = 'Error';
@@ -42,7 +42,7 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
                 `;
             });
             resultsDiv.innerHTML = resultsHTML;
-            messageDiv.innerText = 'Search successful'; 
+            messageDiv.innerText = 'Search successful';
         }
     }
 });

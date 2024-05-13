@@ -1,0 +1,1 @@
+No additional work done other than the requirements. Furthermore, the coursework-sample.spec.js file had an error. It used both a module type file function and normal type file function (import and require()) in the same time, causing me to replace the require function with import.
